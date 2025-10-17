@@ -10,7 +10,8 @@
 * La función encontrarMaxMin recorre el arreglo una sola vez (O(n)).
 * Se maneja el caso de arreglo vacío devolviendo posiciones -1.
 ---
-## Punto 03
+# Punto 03
+
 ## Metodología del programa
 
 El programa sigue los siguientes pasos para contar las vocales en una cadena:
