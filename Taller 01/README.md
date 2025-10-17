@@ -10,8 +10,12 @@
 * La función encontrarMaxMin recorre el arreglo una sola vez (O(n)).
 * Se maneja el caso de arreglo vacío devolviendo posiciones -1.
 ---
-# Punto 03
-* Uso de getline(cin, cadena) para leer toda la línea, incluyendo espacios.
-* La función tolower convierte cada carácter a minúscula, de modo que no importa si el usuario escribe mayúsculas o minúsculas.
-* Se recorre la cadena con un for-each y se incrementa el contador si el carácter es una vocal.
-* 
+## Punto 03
+## Metodología del programa
+
+El programa sigue los siguientes pasos para contar las vocales en una cadena:
+
+1. Se utiliza `getline(cin, cadena)` para leer toda la línea de texto ingresada, incluyendo los espacios.
+2. La función `tolower()` convierte cada carácter a minúscula, garantizando que el conteo sea insensible a mayúsculas o minúsculas.
+3. Luego, mediante un bucle *for-each*, se recorre la cadena y se incrementa un contador cada vez que el carácter analizado es una vocal.
+4. Finalmente, el programa muestra en pantalla el número total de vocales encontradas.
