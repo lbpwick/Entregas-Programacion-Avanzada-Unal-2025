@@ -1,0 +1,70 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[hyphens]{url}
+\usepackage[scriptsize,raggedright]{subfigure}
+\usepackage{enumerate}
+\usepackage[sort&compress]{natbib}
+\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage{lineno}
+\usepackage{bookmark}
+\usepackage{epsfig}
+\usepackage{footmisc}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{booktabs}
+
+\captionsetup{font=footnotesize}
+
+\newtheorem{example}{Ejemplo}
+\theoremstyle{plain}
+
+\title{\Large{\vspace{.5cm}{\bf Universidad Nacional de Colombia, sede de La Paz}}\\
+       \vspace{.5cm}
+       \LARGE{\textbf{Trabajo Práctico 01 -- Programación Avanzada}}}
+\author{
+        \Large{\textbf{Ing. Mauro Baquero-Suárez}}\\
+        \small{M.Sc. Automatización Industrial - Universidad Nacional de Colombia} \\
+        \small{Ingeniería Mecatrónica}
+}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\renewcommand{\figurename}{\textbf{Figura}}
+\renewcommand{\figureautorefname}{Fig.\negthinspace}
+
+%\thispagestyle{empty} % Remove page number
+
+\vspace{.5cm}
+
+%-----------------------------------------------------------------------------------------------
+% Add your content here:
+%-----------------------------------------------------------------------------------------------
+\section*{Ejercicios de repaso de Programación en C/C++}
+A continuación se presentan algunos ejercicios para repasar conceptos básicos de programación en C/C++. Cada ejercicio tiene un valor porcentual asociado que indica su peso en la evaluación total del trabajo práctico. Este trabajo práctico y es el primero de cuatro que se realizarán durante el curso de Programación Avanzada. Se espera que los estudiantes implementen soluciones eficientes y bien estructuradas para cada uno de los ejercicios propuestos.
+\begin{enumerate}
+    \item Escriba un programa en C/C++ que solicite al usuario ingresar dos números enteros y luego imprima la suma, resta, multiplicación y división de esos números. Asegúrese de manejar la división por cero adecuadamente. (10\%).
+    \item Cree una función en C/C++ que reciba un arreglo (vector) de números decimales, y retorne el valor máximo y mínimo del arreglo, junto con sus posiciones en dicho arreglo.  El arreglo debe ser de cualquier tamaño, y entregado por el usuario de manera directa.(20\%).
+    \item Escriba un programa en C/C++ que lea una cadena de caracteres y cuente el número de vocales presentes en la cadena. (10\%).
+    \item Implemente una función en C/C++ que reciba un arreglo (vector o matriz) de números decimales y calcule la norma $\mathcal{L}_2$ (euclidiana) y $\mathcal{L}_\infty$ del arreglo. El arreglo debe ser de cualquier tamaño, y entregado por el usuario de manera directa. (20\%).
+    \item Implemente una función en C/C++ que reciba un arreglo (matriz) de números decimales y calcule la inversa de la matriz. La función debe detectar automáticamente si la matriz ingresada no es cuadrada. Entonces, si es posible, debe calcular la pseudo inversa. Si la función detecta que la matriz no tiene inversa, el programa debe imprimir este resultado, especificando porque dicha matriz no tiene solución. El arreglo debe ser de cualquier tamaño, y entregado por el usuario de manera directa. (40\%).
+\end{enumerate}
+
+\section*{Entrega}
+El trabajo práctico debe ser entregado en formato digital a través de un repositorio en la plataforma Github. Asegúrese de incluir un archivo README con instrucciones claras sobre cómo compilar y ejecutar su código. También, el archivo README debe explicar claramente la metodología que utiliza cada programa para resolver el problema dado. La fecha límite para la entrega es el 17 de Octubre del 2025 a las 23:59 horas. No se aceptarán entregas tardías sin una justificación válida.
+%-----------------------------------------------------------------------------------------------
+\end{document}
