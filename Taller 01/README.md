@@ -7,9 +7,9 @@
 ---
 # Punto 02
 
-## 🧠 Metodología del programa
+## Metodología del programa
 
-El programa sigue los siguientes pasos para determinar el valor máximo y mínimo dentro de un conjunto de números ingresados por el usuario:
+El código sigue los siguientes pasos para determinar el valor máximo y mínimo dentro de un conjunto de números ingresados por el usuario:
 
 1. Se solicita al usuario el tamaño del arreglo y luego los valores numéricos que se almacenan en un `vector<double>`.
 2. Se inicializa una estructura `Resultados` que contiene los valores máximo, mínimo y sus respectivas posiciones.
