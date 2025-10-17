@@ -6,9 +6,19 @@
 * Se valida que el divisor no sea cero antes de realizar la operación.
 ---
 # Punto 02
-* Uso de una estructura Resultados para devolver múltiples valores (máximo, mínimo y posiciones).
-* La función encontrarMaxMin recorre el arreglo una sola vez (O(n)).
-* Se maneja el caso de arreglo vacío devolviendo posiciones -1.
+
+## 🧠 Metodología del programa
+
+El programa sigue los siguientes pasos para determinar el valor máximo y mínimo dentro de un conjunto de números ingresados por el usuario:
+
+1. Se solicita al usuario el tamaño del arreglo y luego los valores numéricos que se almacenan en un `vector<double>`.
+2. Se inicializa una estructura `Resultados` que contiene los valores máximo, mínimo y sus respectivas posiciones.
+3. Si el arreglo no contiene elementos, se devuelve un resultado con valores nulos y posiciones en `-1` para indicar que no hay datos.
+4. En caso contrario, se recorren los elementos del vector con un bucle `for`:
+   - Si un elemento es mayor que el máximo actual, se actualizan el valor máximo y su posición.
+   - Si un elemento es menor que el mínimo actual, se actualizan el valor mínimo y su posición.
+5. Finalmente, se muestran en pantalla el valor máximo, el valor mínimo y las posiciones que ocupan dentro del arreglo.
+
 ---
 # Punto 03
 
