@@ -73,9 +73,8 @@ Para ello, se siguen los pasos descritos a continuación:
    - En el caso de la matriz, se calcula la **máxima suma de valores absolutos por fila**.
    - Matemáticamente:
      - Para un vector:  
-       \[
-       \|v\|_\infty = \max_i |v_i|
-       \]
+      $||v||_{\infty} = \max_i |v_i|$
+
      - Para una matriz:  
        \[
        \|M\|_\infty = \max_i \sum_j |M_{ij}|
