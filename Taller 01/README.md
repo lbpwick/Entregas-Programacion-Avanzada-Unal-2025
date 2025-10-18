@@ -58,28 +58,11 @@ Para ello, se siguen los pasos descritos a continuación:
 3. **Cálculo de la norma Euclidiana (L₂):**
    - Se suman los cuadrados de todos los elementos.
    - Luego, se obtiene la raíz cuadrada de esta suma utilizando `sqrt()`.
-   - Matemáticamente:
-     - Para un vector:  
-       \[
-       \|v\|_2 = \sqrt{\sum_{i=1}^{n} v_i^2}
-       \]
-     - Para una matriz:  
-       \[
-       \|M\|_2 = \sqrt{\sum_{i,j} M_{ij}^2}
-       \]
-
+   
 4. **Cálculo de la norma infinita (L∞):**
    - En el caso del vector, se toma el **valor absoluto máximo** de todos los elementos.
    - En el caso de la matriz, se calcula la **máxima suma de valores absolutos por fila**.
-   - Matemáticamente:
-     - Para un vector:  
-      $||v||_{\infty} = \max_i |v_i|$
-
-     - Para una matriz:  
-       \[
-       \|M\|_\infty = \max_i \sum_j |M_{ij}|
-       \]
-
+   - 
 5. **Visualización de resultados:**
    - Se muestran los datos ingresados en formato tabulado con cuatro cifras decimales (`setprecision(4)`).
    - Finalmente, se imprimen las normas L₂ y L∞ correspondientes, diferenciando entre vector o matriz.
