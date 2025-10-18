@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include <iomanip>  // Para setprecision
+#include <iomanip> 
 using namespace std;
 
-// Calcula normas L2 y L_inf para vectores
+// Cálculo normas L2 y L_inf para vectores
 void calcularNormasVector(const vector<double>& v) {
     double norma2 = 0.0;
     double normainf = 0.0;
@@ -23,7 +23,7 @@ void calcularNormasVector(const vector<double>& v) {
     cout << "Norma L_inf (Infinita): " << normainf << endl;
 }
 
-// Calcula normas L2 y L_inf para matrices
+// Cálculo de normas L2 y L_inf para matrices
 void calcularNormasMatriz(const vector<vector<double>>& M) {
     double norma2 = 0.0;
     double normainf = 0.0;
@@ -104,3 +104,4 @@ int main() {
 
     return 0;
 }
+
