@@ -62,7 +62,6 @@ Para ello, se siguen los pasos descritos a continuación:
 4. **Cálculo de la norma infinita (L∞):**
    - En el caso del vector, se toma el **valor absoluto máximo** de todos los elementos.
    - En el caso de la matriz, se calcula la **máxima suma de valores absolutos por fila**.
-   - 
 5. **Visualización de resultados:**
    - Se muestran los datos ingresados en formato tabulado con cuatro cifras decimales (`setprecision(4)`).
    - Finalmente, se imprimen las normas L₂ y L∞ correspondientes, diferenciando entre vector o matriz.
