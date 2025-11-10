@@ -1,1 +1,175 @@
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[margin=.988in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[hyphens]{url}
+\usepackage[scriptsize,raggedright]{subfigure}
+\usepackage{enumerate}
+\usepackage[super,sort&compress]{natbib}
+\usepackage[hidelinks,breaklinks,bookmarksnumbered=true]{hyperref}
+\usepackage{lineno}
+\usepackage{bookmark}
+\usepackage{epsfig}
+\usepackage{footmisc}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage[verbose]{wrapfig}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{courier}
+%-----------------------------------------------------------------------------------------------
+% Define colors:
+\definecolor{JadeGreen}{RGB}{0,128,168}
+%-----------------------------------------------------------------------------------------------
+\captionsetup{font=footnotesize}
+\renewcommand{\captionlabelfont}{\bfseries}
+%-----------------------------------------------------------------------------------------------
+\newcommand{\class}{\Large{Programación Avanzada}}
+\newcommand{\term}{Octubre 2025}
+\newcommand{\examnum}{Trabajo Práctico No. 2 - POO en C/C++}
+\newcommand{\examdate}{\small POO en C++}
+\newcommand{\timelimit}{2 horas}
+\pointname{ \%}
+\pointsinmargin
+\marginpointname{\%}
+\boxedpoints
+%-----------------------------------------------------------------------------------------------
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{Trabajo Práctico No. 1}{\hspace{.4cm} - Página \thepage\ de \numpages}{\examdate}
+\runningheadrule
+%-----------------------------------------------------------------------------------------------
+\newtheorem{example}{Ejemplo}
+\theoremstyle{plain}
+%-----------------------------------------------------------------------------------------------
+\begin{document}
+%-----------------------------------------------------------------------------------------------
+\renewcommand{\figurename}{\textbf{Fig.}}
+\renewcommand{\sectionautorefname}{Sección\negthinspace}
+\renewcommand{\chapterautorefname}{Capítulo\negthinspace}
+\renewcommand{\subsectionautorefname}{Subsección\negthinspace}
+\renewcommand{\figureautorefname}{Fig.\negthinspace}
+\renewcommand{\appendixautorefname}{Anexo\negthinspace}
+\newcommand{\aref}[1]{\hyperref[#1]{Anexo~\ref{#1}}}
+\def\equationautorefname~#1\null{(#1)\null}
+\bibpunct{\color{JadeGreen}[}{\color{JadeGreen}]}{,}{n}{}{;}
+\newcommand{\subfigureautorefname}{\figureautorefname}
+%-----------------------------------------------------------------------------------------------
+% Header:
+\noindent
+\begin{wrapfloat}{figure}[1]{r}[4.3cm]{3.4cm}
+\vspace{-.95cm}\hspace{-6.45cm}\includegraphics[scale=.26]{build/figures/LogoUNAL.pdf}
+\end{wrapfloat}
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{3pt}} l}
+\toprule[1.5pt]
+\textbf{\class} & & \\
+\textbf{\examnum} & & \\
+\cmidrule{1-1}
+{\textbf{Profesor: M.Sc. Mauro Baquero-Suárez}} & & \\
+\cmidrule{1-1}
+{\textbf{Programa: Ingeniería Mecatrónica}} & & \\
+\bottomrule[1.5pt]
+\end{tabular*}
+%-----------------------------------------------------------------------------------------------
 
+%\thispagestyle{empty} % Remove page number
+
+\vspace{.5cm}
+
+%-----------------------------------------------------------------------------------------------
+% Add your content here:
+%-----------------------------------------------------------------------------------------------
+\section*{Ejercicios de Programación Orientada a Objetos}
+
+\begin{questions}
+\question[10] Implemente una clase en C++ llamada \texttt{Vector3D} que represente un vector en un espacio tridimensional. La clase debe incluir:
+\begin{itemize}
+    \item Un constructor que inicialice las coordenadas del vector.
+    \item Métodos para calcular la magnitud del vector y para normalizarlo.
+    \item Sobrecarga de los operadores de suma, resta y producto escalar entre dos vectores.
+    \item Un método para imprimir las coordenadas del vector en la consola.
+\end{itemize}
+
+\question[10] Cree una clase en C++ llamada \texttt{Matriz} que represente una matriz cuadrada de tamaño \( n \times n \). La clase debe incluir:
+\begin{itemize}
+    \item Un constructor que inicialice la matriz con valores aleatorios.
+    \item Un método para calcular la transpuesta de la matriz.
+    \item Un método para multiplicar la matriz por otra matriz del mismo tamaño.
+    \item Un método para imprimir la matriz en la consola.
+    \item Sobrecarga del operador de acceso para permitir la indexación de elementos de la matriz.
+    \item Un destructor que libere la memoria asignada dinámicamente.
+\end{itemize}
+
+\question[10] Diseñe una clase en C++ llamada \texttt{Polinomio} que represente un polinomio de grado \( n \). La clase debe incluir:
+\begin{itemize}
+    \item Un constructor que inicialice los coeficientes del polinomio.
+    \item Un método para evaluar el polinomio en un valor dado de \( x \).
+    \item Sobrecarga de los operadores de suma y multiplicación entre dos polinomios.
+    \item Un método para imprimir el polinomio en la forma estándar.
+    \item Un destructor que libere la memoria asignada dinámicamente.
+    \item Un método para derivar el polinomio y devolver un nuevo objeto \texttt{Polinomio} que represente la derivada.
+\end{itemize}
+
+\question[10] Declarar dos clases: números complejos en forma binomial $(a+ib)$ y números complejos en forma polar $(a.e^b)$. La primera se llamará complex y la segunda polar. Implementar los operadores { +, *, -, /, conj } para los nuevos tipos de datos. Asimismo, implementar las necesarias funciones de conversión. Implementar los constructores flexibles. Implementar una función llamada acumula que sume un número indefinido de números complejos y polares.
+
+\question[20] Se quiere escribir un programa para manipular ecuaciones algebraicas o polinómicas dependientes de una variable. Por ejemplo:
+\begin{equation}
+P(x) = 4x^3 + 3x^2 - 2x + 7 \hspace{.13cm}\text{más}\hspace{.13cm} Q(x) = 5x^2 - 6x + 10 \hspace{.13cm}\text{igual a}\hspace{.13cm} R(x) = 4x^3 + 8x^2 - 8x + 17;
+\end{equation}
+Cada término del polinomio será representado por una clase \texttt{CTermino} y cada polinomio por una clase \texttt{CPolinomio}. La clase \texttt{CTermino} tendrá dos atributos privados: coeficiente y exponente, y los métodos necesarios para permitir al menos:
+\begin{itemize}
+\item Construir un término, iniciado a 0 por omisión.
+\item Acceder al coeficiente de un término.
+\item Acceder al exponente de un término.
+\item Obtener la cadena de caracteres equivalente a un término con el formato siguiente:
+\[\{\pm\} 7x^4.\]
+\end{itemize}
+La clase \texttt{CPolinomio} tendrá un atributo privado (polinomio) que será una matriz que almacenará los términos del polinomio, así como los métodos necesarios para permitir al menos: 
+\begin{itemize}
+\item Construir un polinomio, iniciado con cero términos por omisión.
+\item Obtener el número de términos que tiene actualmente el polinomio.
+\item Asignar un término a un polinomio, colocándolo en orden ascendente del exponente. Si el término existe, se sumarán los coeficientes. Si el coeficiente es nulo, no se realizará ninguna operación. Cada vez que se inserte un nuevo término, se incrementará automáticamente el tamaño del polinomio en 1. El método encargado de esta operación tendrá un parámetro de la clase \texttt{CTermino}.
+\item Sumar dos polinomios. El polinomio resultante quedará también ordenado en orden ascendente del exponente. El método encargado de esta operación tendrá un parámetro de la clase \texttt{CPolinomio} y devolverá un nuevo objeto de la clase \texttt{CPolinomio}.
+\item Multiplicar dos polinomios. El polinomio resultante quedará también ordenado en orden ascendente del exponente. El método encargado de esta operación tendrá un parámetro de la clase \texttt{CPolinomio} y devolverá un nuevo objeto de la clase \texttt{CPolinomio}.
+\item Obtener la cadena de caracteres equivalente a un polinomio con el formato siguiente:
+\[4x^3 + 3x^2 - 2x + 7.\]
+\end{itemize}
+
+\question[40] Se requiere desarrollar el juego de dominó utilizando Programación Orientada a Objetos en C++. El juego debe incluir las siguientes características:
+\begin{itemize}
+\item Una clase \texttt{Ficha} que represente una ficha de dominó con dos valores (números) en cada extremo.
+\item Una clase \texttt{Jugador} que represente a un jugador del juego, incluyendo su nombre y las fichas que posee.
+\item Una clase \texttt{JuegoDomino} que gestione el flujo del juego, incluyendo la distribución de fichas, el turno de los jugadores y la verificación de las reglas del juego.
+\item Implementar métodos para que los jugadores puedan colocar fichas en la mesa, verificar si un jugador puede jugar una ficha y determinar el ganador del juego.
+\item Incluir una interfaz de usuario simple en la consola para interactuar con el juego, permitiendo a los jugadores ver sus fichas, el estado del juego y realizar sus movimientos.
+\item Asegurarse de que el código esté bien estructurado, utilizando principios de POO como encapsulación, herencia y polimorfismo donde sea apropiado.
+\item El juego debe permitir entre dos y cuatro jugadores humanos competir entre sí.
+\item Implementar un sistema de puntuación que registre las victorias de cada jugador a lo largo de múltiples rondas.
+\item Incluir comentarios en el código para explicar la funcionalidad de cada clase y método.
+\item Proporcionar un archivo README que explique cómo compilar y ejecutar el juego, así como las reglas básicas del dominó.
+\item Incluir un mecanismo para reiniciar el juego sin necesidad de reiniciar el programa completo.
+\item Asegurarse de manejar adecuadamente los casos en los que un jugador no pueda realizar un movimiento válido.
+\item Se debe tener en cuenta que cada juego comienza con un conjunto completo de fichas de dominó (28 fichas en total). Además, las fichas deben ser distribuidas aleatoriamente entre los jugadores al inicio de cada partida.
+\item Las partidas son bucles hasta que un jugador gane o se llegue a un estado de bloqueo donde ningún jugador pueda realizar un movimiento válido.
+\end{itemize}
+\end{questions}
+
+\section*{Entrega}
+El trabajo práctico debe ser entregado en formato digital a través de un repositorio en la plataforma Github. Asegúrese de incluir un archivo README con instrucciones claras sobre cómo compilar y ejecutar su código. También, el archivo README debe explicar claramente la metodología que utiliza cada programa para resolver el problema dado. La fecha límite para la entrega es el 11 de Noviembre del 2025 a las 23:59 horas. No se aceptarán entregas tardías sin una justificación válida.
+%-----------------------------------------------------------------------------------------------
+\end{document}
