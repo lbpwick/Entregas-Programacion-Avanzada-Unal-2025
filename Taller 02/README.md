@@ -67,8 +67,8 @@ Características implementadas
 ---
 
 # Punto 03
-Este programa implementa una clase Polinomio en C++ que permite crear y operar polinomios de manera dinámica usando programación orientada a objetos. Cada polinomio almacena su grado y un arreglo dinámico de coeficientes, lo que permite manejar funciones de cualquier orden.
 
+Este programa implementa una clase Polinomio en C++ que permite crear y operar polinomios de manera dinámica usando programación orientada a objetos. Cada polinomio almacena su grado y un arreglo dinámico de coeficientes, lo que permite manejar funciones de cualquier orden.
 
 ## Metodología del programa
 
@@ -96,21 +96,113 @@ Clase `Polinomio`:
 
 - El método `leer()` permite ingresar el grado y coeficientes.
 
-- Un menú en `main()` permite:
 
--- Leer dos polinomios.
+Un menú en `main()` permite:
 
--- Mostrarlos.
+- Leer dos polinomios.
 
--- Sumarlos.
+- Mostrarlos.
 
--- Multiplicarlos.
+- Sumarlos.
 
--- Evaluar uno de ellos.
+- Multiplicarlos.
 
--- Derivarlo.
+- Evaluar uno de ellos.
+
+- Derivarlo.
 
 
-# Punto 4
+# Punto 04
+
+Este programa implementa dos clases (`complex` y `polar`) que permiten trabajar de forma flexible con números complejos tanto en su forma binomial (a + bi) como en su forma polar (r·e^(iθ)). Además, integra operaciones básicas, conversiones entre ambas representaciones y funciones de acumulación usando plantillas variádicas.
+
+## Metodología
+
+1. Clase `complex` (forma binomial)
+
+Representa un número complejo del tipo a + bi, e incluye:
+
+- Operadores definidos:
+
+  - Suma, resta, multiplicación y división.
+
+  - Conjugado.
+
+- Conversiones:
+
+  - Constructor que recibe un número polar.
+
+  - Método `toPolar()` para convertir a coordenadas polares.
+
+- Visualización:
+
+  - print() muestra el número en formato (a ± bi).
+
+
+2. Clase polar (forma polar)
+
+Representa números complejos como r · e^(iθ), con:
+
+- Operadores definidos:
+
+  - Suma y resta (conversión temporal a binomial).
+
+  - Multiplicación y división mediante propiedades polares.
+
+  - Conjugado.
+
+- Conversiones:
+
+  - Constructor que recibe un número complejo.
+
+  - toComplex() para convertir a forma binomial.
+
+- Visualización:
+
+  - print() imprime r * e^(iθ).
+
+
+## Relación entre complex y polar
+
+Ambas clases están diseñadas para ser compatibles mediante:
+
+- Constructores cruzados.
+
+- Métodos de conversión (toPolar() y toComplex()).
+
+- Operadores que permiten realizar operaciones sin importar la forma en la que fueron ingresados.
+
+## Funciones plantilla (Templates variádicas)
+
+El programa implementa dos funciones para sumar múltiples valores:
+
+- `acumula(args...)` → recibe varios números complejos y retorna su suma.
+
+- `acumulaPolar(args...)` → recibe varios valores polares, los convierte a binomial y acumula sus sumas.
+
+Esto permite sumar una cantidad arbitraria de números usando una sola llamada.
+
+## Interfaz por menú
+
+El `main()` incluye un menú interactivo que permite:
+
+- Crear y mostrar un número complejo.
+
+- Crear y mostrar un número en formato polar.
+
+- Convertir entre ambas representaciones.
+
+- Realizar operaciones (+, −, ×, ÷, conjugado) entre dos complejos.
+
+- Sumar múltiples números complejos ingresados por el usuario.
+
+
+
+# Punto 05
+
+
+# Punto 06 
+
+Abrir carpeta `Punto 6` y leer el `README` correspondiente a este punto.
 
 
