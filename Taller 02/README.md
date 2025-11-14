@@ -134,15 +134,6 @@ La metodología utilizada se basa en los siguientes pasos:
 
 Se emplea la función `mostrar()` para imprimir los vectores en un formato legible.
 
-### Estructura del código
-Vector3D.cpp
-├── Clase `Vector3D`
-│   ├── Constructor
-│   ├── Operadores sobrecargados (`+`, `-`, `*`)
-│   ├── Métodos: `magnitud()`, `normalizado()`, `mostrar()`
-├── Función auxiliar `leerVector()`
-└── Función principal `main()`
-
 ---
 # Punto 02
 
