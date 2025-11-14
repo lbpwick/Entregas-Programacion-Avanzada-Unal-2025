@@ -9,7 +9,7 @@ La metodología utilizada se basa en los siguientes pasos:
 
 1. Definición de la clase Vector3D
 
-  Contiene tres atributos privados: x, y, z, que representan las componentes del vector. Incluye métodos y operadores sobrecargados para operar con objetos de esta clase.
+  Contiene tres atributos privados: `x`, `y`, `z`, que representan las componentes del vector. Incluye métodos y operadores sobrecargados para operar con objetos de esta clase.
 
 2. Sobrecarga de operadores
 
@@ -27,7 +27,7 @@ La metodología utilizada se basa en los siguientes pasos:
 
 4. Interacción con el usuario
 
-  La función `leerVector()` solicita al usuario las componentes x, y, z de dos vectores.
+  La función `leerVector()` solicita al usuario las componentes `x`, `y`, `z` de dos vectores.
 
   En `main()`, el usuario ingresa ambos vectores y el programa muestra:
 
@@ -77,7 +77,7 @@ Clase `Polinomio`:
 
 - Contiene el grado y los coeficientes del polinomio.
 
-- Usa memoria dinámica (new y delete[]) para adaptarse al tamaño del polinomio.
+- Usa memoria dinámica (`new` y `delete[]`) para adaptarse al tamaño del polinomio.
 
 - Incluye constructor por defecto, constructor copia, operador de asignación y destructor.
 
@@ -115,13 +115,13 @@ Un menú en `main()` permite:
 ---
 # Punto 04
 
-Este programa implementa dos clases (`complex` y `polar`) que permiten trabajar de forma flexible con números complejos tanto en su forma binomial (a + bi) como en su forma polar (r·e^(iθ)). Además, integra operaciones básicas, conversiones entre ambas representaciones y funciones de acumulación usando plantillas variádicas.
+Este programa implementa dos clases (`complex` y `polar`) que permiten trabajar de forma flexible con números complejos tanto en su forma binomial ($$a + bi$$) como en su forma polar ($$r·e^{iθ}$$). Además, integra operaciones básicas, conversiones entre ambas representaciones y funciones de acumulación usando plantillas variádicas.
 
 ## Metodología
 
 1. Clase `complex` (forma binomial)
 
-Representa un número complejo del tipo a + bi, e incluye:
+Representa un número complejo del tipo $$a + bi$$, e incluye:
 
 - Operadores definidos:
 
@@ -137,12 +137,12 @@ Representa un número complejo del tipo a + bi, e incluye:
 
 - Visualización:
 
-  - print() muestra el número en formato (a ± bi).
+  - print() muestra el número en formato ($$a ± bi$$).
 
 
 2. Clase polar (forma polar)
 
-Representa números complejos como r · e^(iθ), con:
+Representa números complejos como $$r · e^{iθ}$$, con:
 
 - Operadores definidos:
 
@@ -160,7 +160,7 @@ Representa números complejos como r · e^(iθ), con:
 
 - Visualización:
 
-  - print() imprime r * e^(iθ).
+  - `print()` imprime $$r * e^{iθ}$$.
 
 
 ## Relación entre complex y polar
@@ -169,7 +169,7 @@ Ambas clases están diseñadas para ser compatibles mediante:
 
 - Constructores cruzados.
 
-- Métodos de conversión (toPolar() y toComplex()).
+- Métodos de conversión (`toPolar()` y `toComplex()`).
 
 - Operadores que permiten realizar operaciones sin importar la forma en la que fueron ingresados.
 
@@ -193,7 +193,7 @@ El `main()` incluye un menú interactivo que permite:
 
 - Convertir entre ambas representaciones.
 
-- Realizar operaciones (+, −, ×, ÷, conjugado) entre dos complejos.
+- Realizar operaciones (`+`, `−`, `×`, `÷`, conjugado) entre dos complejos.
 
 - Sumar múltiples números complejos ingresados por el usuario.
 
