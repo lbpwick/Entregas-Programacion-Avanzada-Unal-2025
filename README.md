@@ -7,4 +7,6 @@ Integrantes:
 
 ### Ing. Mauro Baquero Suárez <p> M.Sc. Automatización Industrial
 --- 
-Ingresar a la carpeta Taller 01 para visualizar la primera entrega.
+Ingresar a la carpeta `Taller 01` para visualizar la primera entrega.
+---
+Ingresar a la carpeta `Taller 02` para visualizar la segunda entrega. 
