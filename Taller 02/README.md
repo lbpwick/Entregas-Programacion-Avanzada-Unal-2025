@@ -1,12 +1,12 @@
 # Taller #02 de Programacion Avanzada Unal. 2025 
 
-# Cómo compilar y ejecutar programas en C++ usando Visual Studio Code
+## Cómo compilar y ejecutar programas en C++ usando Visual Studio Code
 
-Esta guía resume los pasos generales necesarios para compilar y ejecutar cualquiera de los cinco programas en C++ dentro de Visual Studio Code.
+Esta guía resume los pasos generales necesarios para compilar y ejecutar cualquiera de los programas en C++ dentro de Visual Studio Code.
 
-## ✔️ 1. Instalar requisitos
+### ✔️ 1. Instalar requisitos
 
-### a) Compilador C++
+#### a) Compilador C++
 
 Instala un compilador compatible con C++17 o superior:
 
@@ -19,7 +19,7 @@ Verifica la instalación ejecutando en la terminal:
 g++ --version
 ```
 
-## ✔️ 2. Instalar extensiones en VS Code
+### ✔️ 2. Instalar extensiones en VS Code
 
 Desde el Marketplace de VS Code instala:
 
@@ -27,13 +27,13 @@ Desde el Marketplace de VS Code instala:
 * **C/C++ Compile Run** (opcional) → permite ejecutar con un clic
 * **Code Runner** (opcional)
 
-## ✔️ 3. Abrir el proyecto en VS Code
+### ✔️ 3. Abrir el proyecto en VS Code
 
 1. Crea una carpeta para tus programas.
 2. Copia dentro de ella cualquiera de los archivos de código (`.cpp`).
 3. En VS Code, abre esa carpeta: **File → Open Folder**
 
-## ✔️ 4. Compilar manualmente desde la terminal integrada
+### ✔️ 4. Compilar manualmente desde la terminal integrada
 
 1. Abre la terminal: **View → Terminal**
 2. Compila cualquier archivo con:
@@ -58,14 +58,14 @@ g++ matrices.cpp -o matrices
 programa.exe
 ```
 
-## ✔️ 5. Compilar y ejecutar usando C/C++ Compile Run (opcional)
+### ✔️ 5. Compilar y ejecutar usando C/C++ Compile Run (opcional)
 
 Si instalaste la extensión:
 
 * Simplemente presiona **F6**
 * VS Code compilará y ejecutará automáticamente el archivo actual.
 
-## ✔️ 6. Crear una tarea personalizada (opcional)
+### ✔️ 6. Crear una tarea personalizada (opcional)
 
 Para automatizar la compilación:
 
@@ -77,13 +77,13 @@ Para compilar con esa tarea, usa:
 Ctrl + Shift + B
 ```
 
-## ✔️ 7. Entrada por teclado
+### ✔️ 7. Entrada por teclado
 
-Si el programa requiere datos del usuario (como los códigos de polinomios o matrices), asegúrate de ejecutarlo desde la terminal, no desde Code Runner, para evitar problemas con `cin`.
+Si el programa requiere datos del usuario, asegúrate de ejecutarlo desde la terminal, no desde Code Runner, para evitar problemas con `cin`.
 
 ---
 
-## 📌 Resumen rápido
+### 📌 Resumen rápido
 
 * Instala un compilador y la extensión C/C++.
 * Abre el archivo en VS Code.
