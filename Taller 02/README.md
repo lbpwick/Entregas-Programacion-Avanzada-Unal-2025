@@ -48,6 +48,7 @@ Vector3D.cpp
 ├── Función auxiliar `leerVector()`
 └── Función principal `main()`
 
+---
 # Punto 02
 
 ## Metodología del programa
@@ -111,7 +112,7 @@ Un menú en `main()` permite:
 
 - Derivarlo.
 
-
+---
 # Punto 04
 
 Este programa implementa dos clases (`complex` y `polar`) que permiten trabajar de forma flexible con números complejos tanto en su forma binomial (a + bi) como en su forma polar (r·e^(iθ)). Además, integra operaciones básicas, conversiones entre ambas representaciones y funciones de acumulación usando plantillas variádicas.
@@ -196,11 +197,69 @@ El `main()` incluye un menú interactivo que permite:
 
 - Sumar múltiples números complejos ingresados por el usuario.
 
-
-
+---
 # Punto 05
+Este programa implementa una calculadora de polinomios en C++ usando Programación Orientada a Objetos. Permite ingresar dos polinomios, mostrarlos en formato algebraico y calcular su suma y multiplicación.
 
+## Metodología
 
+**Clase** `CTermino`
+
+Representa un término de la forma 𝑐𝑥𝑒cxe.
+
+- Atributos: coeficiente (coef) y exponente (exp).
+
+- Funciones clave:
+
+  - `getCoef()` y `getExp()`: obtienen coeficiente y exponente.
+
+  - `toString()`: convierte el término a formato algebraico (por ejemplo, $$+3x^2$$).
+
+**Clase** `CPolinomio`
+
+Gestiona un polinomio como un vector de términos.
+
+- insertar(CTermino)
+Añade un término manteniendo:
+
+  - suma de coeficientes si ya existe ese exponente,
+
+  - eliminación si queda coeficiente 0,
+
+  - orden ascendente por exponente.
+
+- sumar(CPolinomio)
+Suma dos polinomios insertando sus términos en uno nuevo.
+
+- multiplicar(CPolinomio)
+Aplica multiplicación clásica: combina todos los términos entre ambos polinomios.
+
+- toString()
+Devuelve la representación algebraica completa (ej. $$4x^{3}+2x-1$$).
+
+- **Entrada del usuario**
+
+La función `leerPolinomioUsuario()` pide:
+
+  - Grado del polinomio.
+
+  - Coeficientes desde $$x^{n}$$ hasta $$x^{0}$$.
+
+Cada término se inserta en el polinomio automáticamente.
+
+- `main()`
+
+  - Solicita P(x) y Q(x) al usuario.
+
+  - Calcula:
+
+    - Suma: `P + Q`
+
+    - Producto: `P * Q`
+
+  - Muestra todos los resultados en formato algebraico.
+
+---
 # Punto 06 
 
 Abrir carpeta `Punto 6` y leer el `README` correspondiente a este punto.
