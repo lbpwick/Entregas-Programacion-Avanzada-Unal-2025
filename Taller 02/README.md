@@ -1,4 +1,99 @@
 # Taller #02 de Programacion Avanzada Unal. 2025 
+
+# Cómo compilar y ejecutar programas en C++ usando Visual Studio Code
+
+Esta guía resume los pasos generales necesarios para compilar y ejecutar cualquiera de los cinco programas en C++ dentro de Visual Studio Code.
+
+## ✔️ 1. Instalar requisitos
+
+### a) Compilador C++
+
+Instala un compilador compatible con C++17 o superior:
+
+* **Windows**: MinGW-w64 o MSYS2
+* **Linux**: `sudo apt install g++`
+* **macOS**: instalar Xcode Command Line Tools (`xcode-select --install`)
+
+Verifica la instalación ejecutando en la terminal:
+```bash
+g++ --version
+```
+
+## ✔️ 2. Instalar extensiones en VS Code
+
+Desde el Marketplace de VS Code instala:
+
+* **C/C++** (de Microsoft) → soporte de IntelliSense y depuración
+* **C/C++ Compile Run** (opcional) → permite ejecutar con un clic
+* **Code Runner** (opcional)
+
+## ✔️ 3. Abrir el proyecto en VS Code
+
+1. Crea una carpeta para tus programas.
+2. Copia dentro de ella cualquiera de los archivos de código (`.cpp`).
+3. En VS Code, abre esa carpeta: **File → Open Folder**
+
+## ✔️ 4. Compilar manualmente desde la terminal integrada
+
+1. Abre la terminal: **View → Terminal**
+2. Compila cualquier archivo con:
+```bash
+g++ archivo.cpp -o programa
+```
+
+Ejemplo:
+```bash
+g++ matrices.cpp -o matrices
+```
+
+3. Ejecuta:
+
+**En Linux / macOS:**
+```bash
+./programa
+```
+
+**En Windows:**
+```bash
+programa.exe
+```
+
+## ✔️ 5. Compilar y ejecutar usando C/C++ Compile Run (opcional)
+
+Si instalaste la extensión:
+
+* Simplemente presiona **F6**
+* VS Code compilará y ejecutará automáticamente el archivo actual.
+
+## ✔️ 6. Crear una tarea personalizada (opcional)
+
+Para automatizar la compilación:
+
+1. Ve a **Terminal → Configure Tasks… → C++: g++ build active file**
+2. VS Code generará `.vscode/tasks.json`.
+
+Para compilar con esa tarea, usa:
+```
+Ctrl + Shift + B
+```
+
+## ✔️ 7. Entrada por teclado
+
+Si el programa requiere datos del usuario (como los códigos de polinomios o matrices), asegúrate de ejecutarlo desde la terminal, no desde Code Runner, para evitar problemas con `cin`.
+
+---
+
+## 📌 Resumen rápido
+
+* Instala un compilador y la extensión C/C++.
+* Abre el archivo en VS Code.
+* Compila con:
+```bash
+g++ archivo.cpp -o ejecutable
+```
+
+* Ejecuta con `./ejecutable` (Linux/macOS) o `ejecutable.exe` (Windows)
+
 ---
 # Punto 01
 
