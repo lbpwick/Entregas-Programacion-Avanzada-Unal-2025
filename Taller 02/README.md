@@ -9,33 +9,31 @@ La metodología utilizada se basa en los siguientes pasos:
 
 1. Definición de la clase Vector3D
 
-Contiene tres atributos privados: x, y, z, que representan las componentes del vector.
-
-Incluye métodos y operadores sobrecargados para operar con objetos de esta clase.
+  Contiene tres atributos privados: x, y, z, que representan las componentes del vector. Incluye métodos y operadores sobrecargados para operar con objetos de esta clase.
 
 2. Sobrecarga de operadores
 
-`operator+` → realiza la suma de dos vectores.
+  `operator+` → realiza la suma de dos vectores.
 
-`operator-` → realiza la resta de dos vectores.
+  `operator-` → realiza la resta de dos vectores.
 
-`operator*` → implementa el producto escalar (retorna un número real).
+  `operator*` → implementa el producto escalar (retorna un número real).
 
 3. Funciones matemáticas
 
-`magnitud()` → calcula la longitud del vector usando la raíz cuadrada de la suma de los cuadrados de sus componentes.
+  `magnitud()` → calcula la longitud del vector usando la raíz cuadrada de la suma de los cuadrados de sus componentes.
 
-`normalizado()` → devuelve un nuevo vector con la misma dirección pero con magnitud igual a 1.
+  `normalizado()` → devuelve un nuevo vector con la misma dirección pero con magnitud igual a 1.
 
 4. Interacción con el usuario
 
-La función `leerVector()` solicita al usuario las componentes x, y, z de dos vectores.
+  La función `leerVector()` solicita al usuario las componentes x, y, z de dos vectores.
 
-En `main()`, el usuario ingresa ambos vectores y el programa muestra:
+  En `main()`, el usuario ingresa ambos vectores y el programa muestra:
 
-Los resultados de la suma, resta y producto escalar.
+  -- Los resultados de la suma, resta y producto escalar.
 
-La magnitud y el vector normalizado de cada uno.
+  -- La magnitud y el vector normalizado de cada uno.
 
 5. Salida formateada
 
@@ -49,7 +47,6 @@ Vector3D.cpp
 │   ├── Métodos: `magnitud()`, `normalizado()`, `mostrar()`
 ├── Función auxiliar `leerVector()`
 └── Función principal `main()`
-
 
 # Punto 02
 
@@ -70,7 +67,50 @@ Características implementadas
 ---
 
 # Punto 03
-
+Este programa implementa una clase Polinomio en C++ que permite crear y operar polinomios de manera dinámica usando programación orientada a objetos. Cada polinomio almacena su grado y un arreglo dinámico de coeficientes, lo que permite manejar funciones de cualquier orden.
 
 
 ## Metodología del programa
+
+Clase `Polinomio`: 
+
+- Contiene el grado y los coeficientes del polinomio.
+
+- Usa memoria dinámica (new y delete[]) para adaptarse al tamaño del polinomio.
+
+- Incluye constructor por defecto, constructor copia, operador de asignación y destructor.
+
+`Operaciones implementadas`:
+
+- Suma (`operator+`): combina coeficientes de ambos polinomios.
+
+- Multiplicación (`operator*`): aplica convolución de coeficientes.
+
+- Evaluación (`evaluar(x)`): calcula el valor numérico del polinomio.
+
+- Derivación (`derivar()`): genera un nuevo polinomio con la derivada.
+
+- Impresión formateada (`imprimir()`): muestra el polinomio con signos y potencias.
+
+`Interacción con el usuario`:
+
+- El método `leer()` permite ingresar el grado y coeficientes.
+
+- Un menú en `main()` permite:
+
+-- Leer dos polinomios.
+
+-- Mostrarlos.
+
+-- Sumarlos.
+
+-- Multiplicarlos.
+
+-- Evaluar uno de ellos.
+
+-- Derivarlo.
+
+
+# Punto 4
+
+
