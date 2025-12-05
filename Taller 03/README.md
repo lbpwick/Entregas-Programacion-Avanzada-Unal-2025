@@ -237,15 +237,176 @@ El proyecto está compuesto por **tres archivos de código y un archivo de datos
 Coloca los cuatro archivos en la misma carpeta:
 
 ```text
-ProyectoECG/
+Punto_02/
 ├── main.cpp
 ├── SignalECG.cpp
 ├── SignalECG.h
 └── ECG.txt   (archivo de entrada)
 ```
+---
 
+### ✅ Requisitos
 
+Para compilar y ejecutar el programa necesitas:
 
+- Compilador C++ compatible con C++11 o superior.
+
+  - Ejemplo: `g++` (MinGW en Windows, o instalado en Linux / macOS).
+
+- Sistema operativo:
+
+  - Windows, Linux o macOS.
+
+- Una terminal / consola para compilar y ejecutar.
+
+### 🛠️ Cómo compilar
+
+#### 🔹 Linux / macOS
+
+Abre una terminal en la carpeta del proyecto y ejecuta:
+
+```bash
+g++ main.cpp SignalECG.cpp -o ecg_tool
+```
+Esto generará un ejecutable llamado:
+
+- `ecg_tool` en Linux / macOS.
+
+#### 🔹 Windows (con MinGW)
+
+1. Asegúrate de tener instalado MinGW y que g++ esté en la variable PATH.
+
+2. En la carpeta del proyecto, ejecuta en el terminal:
+```bash
+g++ -std=c++11 main.cpp SignalECG.cpp -o ecg_tool.exe
+```
+
+Esto generará el ejecutable:
+
+- `ecg_tool.exe` en Windows.
+
+### ▶️ Cómo ejecutar
+**Linux / macOS**
+```bash
+./ecg_tool
+```
+**Windows**
+
+En la terminal:
+```bash
+ecg_tool.exe
+```
+
+### 📄 Formato del archivo de entrada ECG
+
+El programa espera un archivo de texto con dos columnas:
+```bash
+amplitud,tiempo
+4.000566,0
+7.391435,0.005
+7.120300,0.010
+...
+```
+- Separador: coma ,
+
+- Sin encabezados (no uses títulos como "amp" o "time")
+
+- `amplitud`: valor de la muestra de la señal ECG (en mV o unidades arbitrarias)
+
+- `tiempo`: instante de tiempo correspondiente a cada muestra (en segundos)
+
+### 💾 Formato del archivo de salida
+
+Cuando elijas la opción “Guardar señal filtrada”, el programa creará un archivo .txt con el siguiente formato:
+```bash
+amplitud_filtrada,tiempo
+0.10234,0
+0.12098,0.005
+...
+```
+
+Es decir, guarda la columna filtrada y el tiempo original.
+
+### 🧩 Uso del menú (flujo básico)
+
+Al ejecutar el programa verás un menú como este:
+
+```bash
+====== MENU ECG ======
+1. Cargar archivo ECG
+2. Calcular frecuencia de muestreo (Fs)
+3. Filtrar simple (pasa bajos exponencial)
+4. Filtrar Butterworth con filtfilt (RECOMENDADO)
+5. Detectar picos y frecuencia cardiaca
+6. Guardar señal filtrada
+7. Salir
+Seleccione una opcion:
+
+```
+
+#### Opción 1 — Cargar archivo ECG
+
+Pide el nombre del archivo, por ejemplo:
+```bash
+Ingrese el nombre del archivo: datos_ecg.txt
+(escribir nombre del archivo con su extensión)
+```
+
+#### Opción 2 — Calcular frecuencia de muestreo (Fs)
+
+<p align="center">
+
+$$
+T_s = \frac{1}{N - 1} \sum_{i=1}^{N-1} (t_{i+1} - t_i)
+$$
+
+</p>
+
+### 🧠 Metodología general del programa
+
+Resumiendo, la metodología que sigue el sistema es:
+
+#### 1. Adquisición de datos
+
+- Lectura de un archivo .txt con muestras de ECG (amplitud,tiempo).
+
+- Almacenamiento en una lista doblemente enlazada para facilitar recorridos y posible extensión futura (por ejemplo, eliminación/inserción de muestras).
+
+#### 2. Caracterización de la señal
+
+- Cálculo del período de muestreo promedio `Ts`.
+
+- Obtención de la frecuencia de muestreo `Fs = 1/Ts`.
+
+#### 3. Filtrado de ruido
+
+- Opción 3: Filtro IIR de primer orden (suavizado exponencial), útil para pruebas rápidas pero con desfase.
+
+- Opción 4 (metodología recomendada):
+
+  - Diseño de un filtro Butterworth digital a partir de una frecuencia de corte Fc.
+
+  - Uso de pre-warping y transformación bilineal en el cálculo de coeficientes.
+
+  - Aplicación de filtrado bidireccional (filtfilt) para reducir el desfase y preservar la forma de la señal.
+
+#### 4. Detección de picos (complejos R)
+
+- Se explota la señal ya filtrada para evitar falsos picos por ruido.
+
+- Umbral ajustable por el usuario para adaptarse a señales de distinta amplitud.
+
+- Detección mediante máximos locales.
+
+#### 5. Cálculo de frecuencia cardiaca
+
+- Cálculo de intervalos R–R promedio.
+
+- Conversión a bpm mediante `FC = 60 / RR_prom`.
+
+#### 6. Exportación de resultados
+
+Escritura de la señal filtrada en un nuevo archivo para análisis posterior (por ejemplo, graficarla en Python y entre otros).
 
 
 
