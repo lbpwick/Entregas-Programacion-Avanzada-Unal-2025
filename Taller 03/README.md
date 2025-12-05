@@ -403,6 +403,59 @@ $$
 
 </p>
 
+**4.** El resultado se guarda en `Node::filtrada` para cada muestra.
+
+#### Opción 4 — Filtro Butterworth con filtfilt (recomendado)
+Este es el método principal y recomendado para señales ECG.
+
+**Objetivo**: obtener un filtrado pasa bajos:
+
+- Con frecuencia de corte `Fc` (típicamente 40–50 Hz para ECG)
+
+- Con respuesta Butterworth (amplitud plana en banda pasante)
+
+- Con fase casi cero usando filtrado bidireccional (filtfilt).
+
+##### Pasos internos del método
+
+**1. Leer parámetros del usuario**
+
+- Frecuencia de corte Fc (Hz)
+
+- Orden del filtro: 2 o 4
+
+  - Si se ingresa otro valor, el código fuerza orden 4.
+
+**2. Calcular la frecuencia de muestreo Fs usando el mismo método de la opción 2.**
+
+**3. Normalizar frecuencia de corte:**
+- Frecuencia de Nyquist:
+<p align="center">
+
+$$
+F_N = \frac{F_s}{2}
+$$
+
+</p>
+
+- Frecuencia normalizada:
+<p align="center">
+
+$$
+W_n = \frac{F_c}{F_N}
+$$
+
+</p>
+
+**4. Pre-warping** para la transformación bilineal:
+
+<p align="center">
+
+$$
+w_p = \tan{\frac{\pi * W_n}{2}}
+$$
+
+</p>
 
 
 
