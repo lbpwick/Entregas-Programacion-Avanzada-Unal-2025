@@ -572,7 +572,7 @@ Termina la ejecución del programa.
 
 ---
 
-### 🧠 Metodología general del programa (Resumen)
+### Metodología general del programa (Resumen)
 
 Resumiendo, la metodología que sigue el sistema es:
 
