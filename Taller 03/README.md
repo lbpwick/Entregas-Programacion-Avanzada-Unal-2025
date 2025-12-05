@@ -9,7 +9,7 @@ El programa permite insertar, eliminar, buscar, mostrar, invertir la lista y gua
 
 ---
 
-####  Requisitos
+###  Requisitos
 
 Para compilar y ejecutar el programa necesitas:
 
@@ -19,7 +19,7 @@ Para compilar y ejecutar el programa necesitas:
 
 ---
 
-#### ▶️ Cómo compilar
+### ▶️ Cómo compilar
 
 Ejecutar en la terminal dentro de la carpeta del archivo:
 
@@ -27,7 +27,7 @@ Ejecutar en la terminal dentro de la carpeta del archivo:
 g++ punto_1.cpp -o program
 ```
 ---
-#### 🧩 Descripción del Programa
+### 🧩 Descripción del Programa
 
 El programa permite gestionar estudiantes mediante un menú interactivo con las opciones:
 
@@ -49,7 +49,7 @@ El programa permite gestionar estudiantes mediante un menú interactivo con las 
 
 ---
 
-####🛠️ Metodología del Código
+### 🛠️ Metodología del Código
 
 A continuación se explica la estructura y funcionamiento interno del programa.
 
@@ -158,11 +158,11 @@ Promedio: 17.8
 Email: juan@gmail.com
 -----------------------------
 ```
-######🔸 `mostrar()`
+###🔸 `mostrar()`
 
 Imprime en consola el contenido completo de la lista.
 
-#####🔹 3. `Función crearEstudiante()`
+🔹 3. `Función crearEstudiante()`
 
 Solicita al usuario los datos requeridos y devuelve un objeto Estudiante.
 
@@ -178,7 +178,7 @@ El ingreso incluye:
 
 - Email
 
-#####🔹 4. Menú en `main()`
+###🔹 4. Menú en `main()`
 
 Controlado con un do-while, permite al usuario seleccionar opciones.
 
@@ -188,8 +188,8 @@ También incluye:
 
 Manejo de excepciones al usar `operator[]`.
 
-##### Ejemplo de uso
-###### Insertar un estudiante
+### Ejemplo de uso
+**Insertar un estudiante**
 ```bash
 Nombre completo: Juan García
 Año de nacimiento: 2001
@@ -197,7 +197,7 @@ ID: 123
 Promedio: 17.5
 Email: juan@gmail.com
 ```
-###### Guardar en archivo
+**Guardar en archivo**
 ```bash
 Nombre del archivo (ej: salida.txt): estudiantes.txt
 Archivo guardado.
