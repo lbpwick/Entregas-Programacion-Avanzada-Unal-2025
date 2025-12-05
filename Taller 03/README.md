@@ -468,10 +468,12 @@ Implementa la ecuación general de un filtro IIR:
 <p align="center">
 
 $$
-y[n] = \frac{1}{a_0}*( \sum_{k=0}^{M} b_{k}x[n-k] - \sum_{k=1}^{N}a_{k}y[n-k])  
+y[n] = \frac{1}{a_0}* \left( \sum_{k=0}^{M} b_{k}x[n-k] - \sum_{k=1}^{N}a_{k}y[n-k]\right)  
 $$
 
 </p>
+
+
 
 ### 🧠 Metodología general del programa
 
