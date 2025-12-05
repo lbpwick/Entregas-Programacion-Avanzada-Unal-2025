@@ -537,13 +537,13 @@ $$
 - Se suman todos los `RR_k` y se calcula el promedio:
 
 $$
-RR_prom = \frac{1}{N-1} \sum_{k=2}^{N}RR_k
+RR_{prom} = \frac{1}{N-1} \sum_{k=2}^{N}RR_k
 $$
 
 **4.** Se calcula la frecuencia cardiaca (en bpm):
 
 $$
-FC = \frac{60}{RR_prom}
+FC = \frac{60}{RR_{prom}}
 $$
 
 **5.** El programa muestra:
