@@ -452,12 +452,26 @@ $$
 <p align="center">
 
 $$
-w_p = \tan{\frac{\pi * W_n}{2}}
+w_p = \tan{(\frac{\pi * W_n}{2})}
 $$
 
 </p>
 
+**5. Calcular coeficientes del filtro Butterworth** (`b` y `a`) según el orden:
 
+- Para **orden 2**: se calculan directamente los coeficientes del filtro IIR de segundo orden.
+
+- Para **orden 4**: se construye como cascada de dos secciones de orden 2 con factores de calidad `Q1` y `Q2`, y luego se combinan por convolución de coeficientes.
+
+**6. Filtrado hacia adelante** (función `aplicarFiltroIIR`):
+Implementa la ecuación general de un filtro IIR:
+<p align="center">
+
+$$
+y[n] = \frac{1}{a_0}*( \sum_{k=0}^{M} b_{k}x[n-k] - \sum_{k=1}^{N}a_{k}y[n-k])  
+$$
+
+</p>
 
 ### 🧠 Metodología general del programa
 
