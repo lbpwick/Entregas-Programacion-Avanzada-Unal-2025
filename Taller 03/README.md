@@ -473,9 +473,106 @@ $$
 
 </p>
 
+donde:
 
+- `b[k]` son los coeficientes del numerador.
 
-### 🧠 Metodología general del programa
+- `a[k]` son los coeficientes del denominador.
+
+- `x[n]` es la señal original (vector de amplitudes).
+
+- `y[n]` es la salida filtrada.
+
+**7. Filtrado bidireccional (filtfilt)**:
+
+- Primero se filtra la señal hacia adelante.
+
+- Se invierte el vector de salida.
+
+- Se vuelve a aplicar el mismo filtro.
+
+- Se invierte de nuevo el resultado.
+
+Resultado:
+
+- El orden efectivo del filtro se duplica (por eso el programa informa “orden efectivo = orden × 2”).
+
+- Se reduce al mínimo el desfase, aproximando un filtro de fase cero.
+
+**8.** Finalmente, el resultado se copia de vuelta a la lista enlazada:
+```bash
+actual->filtrada = backward[idx];
+
+```
+#### Opción 5 — Detección de picos y frecuencia cardiaca
+
+Una vez filtrada la señal (idealmente con el filtro Butterworth), se procede a:
+
+**1.** Pedir un umbral al usuario (`umbral`):
+
+- Solo se consideran picos cuya amplitud filtrada sea mayor que ese valor.
+
+**2.** Recorrer los nodos internos de la lista (desde el segundo hasta el penúltimo) y verificar tres condiciones:
+Un punto es considerado pico si:
+
+- `filtrada[i] > umbral`
+
+- `filtrada[i] > filtrada[i-1]`
+
+- `filtrada[i] > filtrada[i+1]`
+
+Es decir, es un máximo local por encima del umbral.
+
+**3.** Por cada pico detectado, se toma su tiempo:
+
+- Si hay un pico anterior, se calculan los intervalos R–R:
+<p align="center">
+
+$$
+RR_k = t_{pico_{k}}-t_{pico_{k-1}}
+$$
+
+</p>
+
+- Se suman todos los `RR_k` y se calcula el promedio:
+
+$$
+RR_prom = \frac{1}{N-1} \sum_{k=2}^{N}RR_k
+$$
+
+**4.** Se calcula la frecuencia cardiaca (en bpm):
+
+$$
+FC = \frac{60}{RR_prom}
+$$
+
+**5.** El programa muestra:
+
+- Cantidad de picos detectados.
+
+- Promedio R–R en segundos.
+
+- Frecuencia cardiaca en latidos por minuto (bpm).
+
+#### Opción 6 — Guardar señal filtrada
+
+- Pide un nombre de archivo, por ejemplo:
+```bash
+Ingrese el nombre del archivo de salida: ecg_filtrado.txt
+```
+- Recorre la lista enlazada y escribe:
+```bash
+amplitudfiltrada,tiempo
+```
+para cada muestra.
+
+#### Opción 7 — Salir
+
+Termina la ejecución del programa.
+
+---
+
+### 🧠 Metodología general del programa (Resumen)
 
 Resumiendo, la metodología que sigue el sistema es:
 
