@@ -212,6 +212,44 @@ Se recomienda que se tenga un archivo especificamente para este script.
 ```
 --- 
 ## Punto 2
+
+### Procesamiento de Señal ECG 
+
+Este ejercicio implementa un sistema en C++ para:
+
+- Leer una señal ECG desde un archivo `.txt`.
+- Calcular la frecuencia de muestreo.
+- Filtrar la señal con dos métodos distintos (IIR simple y Butterworth con **filtfilt**).
+- Detectar picos (complejos R) y calcular la frecuencia cardiaca.
+- Guardar la señal filtrada en un nuevo archivo.
+
+El proyecto está compuesto por **tres archivos de código y un archivo de datos en** `.txt` **iniciales de una señal**:
+
+- `main.cpp` — Programa principal e interfaz por menú.  
+- `SignalECG.h` — Definición de la clase `SignalECG` y la estructura `Node`.  
+- `SignalECG.cpp` — Implementación de todos los métodos de procesamiento de la señal ECG.  
+- `ECG.txt` — Archivo de datos que será filtrado. 
+
+---
+
+### 📂 Estructura del proyecto
+
+Coloca los cuatro archivos en la misma carpeta:
+
+```text
+ProyectoECG/
+├── main.cpp
+├── SignalECG.cpp
+├── SignalECG.h
+└── ECG.txt   (archivo de entrada)
+```
+
+
+
+
+
+
+
 ---
 ## Punto 3
 
