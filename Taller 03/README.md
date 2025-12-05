@@ -374,6 +374,37 @@ $$
 
 </p>
 
+**3.** Muestra el valor de `Fs` en Hz.
+
+#### Opción 3 — Filtro pasa bajos simple (IIR de 1er orden)
+
+Este filtro es un suavizado exponencial basado en una frecuencia de corte `Fc` elegida por el usuario.
+
+**1.** El programa calcula el período de muestreo `Ts`.
+**2.** A partir de `Fc` y `Ts`, calcula el coeficiente:
+
+<p align="center">
+
+$$
+\alpha = 1 - e^{-2\pi F_c T_s}
+$$
+
+</p>
+
+**3.** Aplica el filtro recursivo:
+- Sea `x[n]` la amplitud original.
+- Sea `y[n]` la señal filtrada.
+
+<p align="center">
+
+$$
+y[n] = \alpha x[n] + (1 - \alpha)\, y[n-1] 
+$$
+
+</p>
+
+
+
 
 ### 🧠 Metodología general del programa
 
