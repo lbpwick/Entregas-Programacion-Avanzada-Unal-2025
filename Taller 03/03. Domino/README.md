@@ -178,21 +178,6 @@ make run
 - ✅ Manejo de excepciones std::exception
 - ✅ Bloqueo de juego detectado automáticamente
 
-## 🚀 Extensiones Posibles
-
-1. **Inteligencia Artificial**:
-   ```cpp
-   class JugadorIA : public Jugador { ... }
-   ```
-
-2. **Interfaz Gráfica**: Migrar a SDL2 o SFML
-
-3. **Red**: Multijugador en línea
-
-4. **Base de Datos**: Guardar puntuaciones
-
-5. **Replay**: Reproducir historial de partidas
-
 ## 📝 Notas de Implementación
 
 - C++17 estándar
