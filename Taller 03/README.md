@@ -31,49 +31,49 @@ g++ punto_1.cpp -o program
 
 El programa permite gestionar estudiantes mediante un menú interactivo con las opciones:
 
-- Insertar estudiante
+- Insertar estudiante.
 
-- Eliminar estudiante por ID
+- Eliminar estudiante por ID.
 
-- Buscar estudiante por ID
+- Buscar estudiante por ID.
 
-- Mostrar lista completa
+- Mostrar lista completa.
 
 - Guardar lista en archivo `.txt`
 
-- Invertir la lista enlazada
+- Invertir la lista enlazada.
 
 - Acceder por índice usando `operator[]`
 
-- Salir
+- Salir.
 
 ---
 
-#### 🛠️ Metodología del Código
+### 🛠️ Metodología del Código
 
 A continuación se explica la estructura y funcionamiento interno del programa.
 
-### 🔹 1. Estructura Estudiante
+#### 🔹 1. Estructura Estudiante
 
 Cada estudiante se almacena en una estructura que contiene:
 
-nombreCompleto
+- `nombreCompleto`
 
-anioNacimiento
+- `anioNacimiento`
 
-id
+- `id`
 
-promedio
+- `promedio`
 
-email
+- `email`
 
 Representa la información básica del estudiante.
 
-### 🔹 2. Lista Enlazada Simple
+#### 🔹 2. Lista Enlazada Simple
 
 El programa implementa manualmente una lista enlazada simple para almacenar estudiantes.
 
-✔ Estructura `Nodo`
+##### ✔ Estructura `Nodo`.
 
 Cada nodo contiene:
 
@@ -81,11 +81,11 @@ Cada nodo contiene:
 
 - Un puntero al siguiente nodo (`Nodo* siguiente`)
 
-✔ Clase `ListadoEstudiantil`
+##### ✔ Clase `ListadoEstudiantil`.
 
 Centraliza todas las operaciones sobre la lista enlazada.
 
-🔸 `insertar(const Estudiante&)`
+##### 🔸 `insertar(const Estudiante&)`
 
 Inserta un estudiante al final de la lista.
 
@@ -93,7 +93,7 @@ Inserta un estudiante al final de la lista.
 
 - Si no, se recorre la lista hasta encontrar el último nodo y se enlaza el nuevo.
 
-🔸 `eliminar(long id)`
+##### 🔸 `eliminar(long id)`
 
 Elimina al estudiante con el ID indicado.
 
@@ -107,7 +107,7 @@ Casos manejados:
 
 Ajusta los punteros y libera memoria con `delete`.
 
-🔸 `buscar(long id)`
+##### 🔸 `buscar(long id)`
 
 Busca un estudiante por ID.
 
@@ -117,7 +117,7 @@ Busca un estudiante por ID.
 
 - Si no existe, devuelve `-1`.
 
-🔸 `operator[](int index)`
+##### 🔸 `operator[](int index)`
 
 Sobrecarga del operador `[]` para acceder a un estudiante por índice como si fuera un arreglo.
 
@@ -131,7 +131,7 @@ Si el índice es inválido, lanza la excepción:
 ```bash
 std::out_of_range
 ```
-🔸 `invertir()`
+##### 🔸 `invertir()`
 
 Invierte el orden de la lista enlazada usando manipulación de punteros.
 
@@ -145,7 +145,7 @@ Utiliza tres punteros:
 
 Es un proceso in-place (sin usar memoria extra).
 
-🔸 `imprimirEnArchivo(const string&)`
+##### 🔸 `imprimirEnArchivo(const string&)`
 
 Guarda todos los estudiantes en un archivo `.txt.`
 
@@ -158,11 +158,11 @@ Promedio: 17.8
 Email: juan@gmail.com
 -----------------------------
 ```
-###🔸 `mostrar()`
+##### 🔸 `mostrar()`
 
 Imprime en consola el contenido completo de la lista.
 
-###🔹 3. `Función crearEstudiante()`
+#### 🔹 3. `Función crearEstudiante()`
 
 Solicita al usuario los datos requeridos y devuelve un objeto Estudiante.
 
@@ -178,18 +178,18 @@ El ingreso incluye:
 
 - Email
 
-### 🔹 4. Menú en `main()`
+#### 🔹 4. Menú en `main()`
 
 Controlado con un do-while, permite al usuario seleccionar opciones.
 
 También incluye:
 
-`setlocale()` para permitir caracteres en español.
+- `setlocale()` para permitir caracteres en español.
 
-Manejo de excepciones al usar `operator[]`.
+- Manejo de excepciones al usar `operator[]`.
 
-### Ejemplo de uso
-**Insertar un estudiante**
+#### Ejemplo de uso
+##### Insertar un estudiante
 ```bash
 Nombre completo: Juan García
 Año de nacimiento: 2001
@@ -197,19 +197,23 @@ ID: 123
 Promedio: 17.5
 Email: juan@gmail.com
 ```
-**Guardar en archivo**
+##### Guardar en archivo
 ```bash
 Nombre del archivo (ej: salida.txt): estudiantes.txt
 Archivo guardado.
 ```
 ---
-### Recomendación de espacio de trabajo
+#### Recomendación de espacio de trabajo
 Se recomienda que se tenga un archivo especificamente para este script.
 ```bash
 📁 Code_1
  ├── Punto_1.cpp
  └── README.md
 ```
+--- 
+## Punto 2
+
+
 
 
 
