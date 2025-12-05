@@ -354,6 +354,8 @@ Ingrese el nombre del archivo: datos_ecg.txt
 
 #### Opción 2 — Calcular frecuencia de muestreo (Fs)
 
+**1.** Calcula el período de muestreo promedio `Ts`:
+
 <p align="center">
 
 $$
@@ -361,6 +363,17 @@ T_s = \frac{1}{N - 1} \sum_{i=1}^{N-1} (t_{i+1} - t_i)
 $$
 
 </p>
+
+**2.** Luego calcula la frecuencia de muestreo:
+
+<p align="center">
+
+$$
+F_s = \frac{1}{T_s}
+$$
+
+</p>
+
 
 ### 🧠 Metodología general del programa
 
