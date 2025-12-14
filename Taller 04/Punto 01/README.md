@@ -66,7 +66,7 @@ El programa utiliza el algoritmo A*, que combina:
 
 **Función de evaluación:**
 
-$f(n) = g(n) + h(n)$
+$$f(n) = g(n) + h(n)$$
 
 
 ---
