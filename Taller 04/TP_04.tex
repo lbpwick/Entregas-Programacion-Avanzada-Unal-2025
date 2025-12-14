@@ -1,0 +1,182 @@
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[margin=.988in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[hyphens]{url}
+\usepackage[scriptsize,raggedright]{subfigure}
+\usepackage{enumerate}
+\usepackage[super,sort&compress]{natbib}
+\usepackage[hidelinks,breaklinks,bookmarksnumbered=true]{hyperref}
+\usepackage{lineno}
+\usepackage{bookmark}
+\usepackage{epsfig}
+\usepackage{footmisc}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage[verbose]{wrapfig}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{courier}
+%-----------------------------------------------------------------------------------------------
+% Define colors:
+\definecolor{JadeGreen}{RGB}{0,128,168}
+%-----------------------------------------------------------------------------------------------
+\captionsetup{font=footnotesize}
+\renewcommand{\captionlabelfont}{\bfseries}
+%-----------------------------------------------------------------------------------------------
+\newcommand{\class}{\Large{Programación Avanzada}}
+\newcommand{\term}{Noviembre 2025}
+\newcommand{\examnum}{Trabajo Práctico No. 4 - Apps en C++}
+\newcommand{\examdate}{\small APPs en C++}
+\newcommand{\timelimit}{2 horas}
+\pointname{ \%}
+\pointsinmargin
+\marginpointname{\%}
+\boxedpoints
+%-----------------------------------------------------------------------------------------------
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{Trabajo Práctico No. 4}{\hspace{.4cm} - Página \thepage\ de \numpages}{\examdate}
+\runningheadrule
+%-----------------------------------------------------------------------------------------------
+\newtheorem{example}{Ejemplo}
+\theoremstyle{plain}
+%-----------------------------------------------------------------------------------------------
+\begin{document}
+%-----------------------------------------------------------------------------------------------
+\renewcommand{\figurename}{\textbf{Fig.}}
+\renewcommand{\sectionautorefname}{Sección\negthinspace}
+\renewcommand{\chapterautorefname}{Capítulo\negthinspace}
+\renewcommand{\subsectionautorefname}{Subsección\negthinspace}
+\renewcommand{\figureautorefname}{Fig.\negthinspace}
+\renewcommand{\appendixautorefname}{Anexo\negthinspace}
+\newcommand{\aref}[1]{\hyperref[#1]{Anexo~\ref{#1}}}
+\def\equationautorefname~#1\null{(#1)\null}
+\bibpunct{\color{JadeGreen}[}{\color{JadeGreen}]}{,}{n}{}{;}
+\newcommand{\subfigureautorefname}{\figureautorefname}
+%-----------------------------------------------------------------------------------------------
+% Header:
+\noindent
+\begin{wrapfloat}{figure}[1]{r}[4.3cm]{3.4cm}
+\vspace{-.95cm}\hspace{-6.45cm}\includegraphics[scale=.26]{figures/LogoUNAL.pdf}
+\end{wrapfloat}
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{3pt}} l}
+\toprule[1.5pt]
+\textbf{\class} & & \\
+\textbf{\examnum} & & \\
+\cmidrule{1-1}
+{\textbf{Profesor: M.Sc. Mauro Baquero-Suárez}} & & \\
+\cmidrule{1-1}
+{\textbf{Programa: Ingeniería Mecatrónica}} & & \\
+\bottomrule[1.5pt]
+\end{tabular*}
+%-----------------------------------------------------------------------------------------------
+
+%\thispagestyle{empty} % Remove page number
+
+\vspace{.5cm}
+
+%----------------------------------------------------------------------------------------------
+% Add your content here:
+%-----------------------------------------------------------------------------------------------
+\section*{Aplicaciones prácticas en C++}
+
+\begin{questions}
+\question[10] Se tiene el ejercicio ``8-puzzle'' (o ''rompecabezas de 8 piezas'') que consiste en un tablero de 3x3 con 8 piezas numeradas del 1 al 8 y un espacio vacío. El objetivo es mover las piezas para alcanzar una configuración objetivo. Implemente una aplicación en C++ para encontrar la solución óptima al problema del 8-puzzle. La aplicación debe permitir al usuario ingresar la configuración inicial y mostrar la secuencia de movimientos necesarios para resolver el rompecabezas.
+\begin{figure}[h!]
+\centering
+\begin{minipage}{0.48\textwidth}
+\centering
+\caption{Ejemplo de configuración inicial.}
+\centering
+\scalebox{1.2}{\begin{tabular}{|c|c|c|}
+\hline
+5 & 7 & 2 \\
+\hline
+4 & 1 &   \\
+\hline
+3 & 8 & 6 \\
+\hline
+\end{tabular}}
+\label{tab:8puzzle}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
+\caption{Solución.}
+\centering
+\scalebox{1.2}{\begin{tabular}{|c|c|c|}
+\hline
+1 & 2 & 3 \\
+\hline
+8 &   & 4  \\
+\hline
+7 & 6 & 5 \\
+\hline
+\end{tabular}}
+\label{tab:solved_8puzzle}
+\end{minipage}
+\end{figure}
+
+\question[50] Se desea implementar una aplicación de ```Hardware in the Loop (HIL)'' en C/C++ para simular el comportamiento de una planta en tiempo real. En la aplicación se debe permitir la interacción con el modelo de la planta SISO de \autoref{eq:plant}, y el derivador de orden superior de \autoref{eq:derivator}, ambos implementados en C/C++. El objetivo es evaluar el seguimiento de la referencia $f_0$ del derivador y las derivadas de 1er, 2do y 3er orden que entrega este algoritmo en diferentes condiciones de operación. La aplicación debe crear un archivo .txt donde se almacenen las señales de entrada y salida de la planta, así como las señales generadas por el derivador, para su posterior análisis. La implementación debe considerar los siguientes aspectos:
+\begin{equation}
+G(s) = \frac{7s^2 - 28s + 21}{s^3 + 9.8s^2 + 30.65s + 30.1}.
+\label{eq:plant}
+\end{equation}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=.65]{figures/plantResponse.pdf}
+\caption{Respuesta de la planta.}
+\label{fig:plantResponse}
+\end{figure}
+\begin{gather}
+\begin{aligned}
+z_0(t_k + 1) &= z_0(t_k) + \tau_s \varphi_0(z_0(t_k) - f(t_k)) + \tau_s z_1(t_k) + \frac{\tau_s^2}{2!} z_2(t_k) + \frac{\tau_s^3}{3!} z_3(t_k), \\
+z_1(t_k + 1) &= z_1(t_k) + \tau_s \varphi_1(z_0(t_k) - f(t_k)) + \tau_s z_2(t_k) + \frac{\tau_s^2}{2!} z_3(t_k), \\
+z_2(t_k + 1) &= z_2(t_k) + \tau_s \varphi_2(z_0(t_k) - f(t_k)) + \tau_s z_3(t_k), \\
+z_3(t_k + 1) &= z_3(t_k) + \tau_s \varphi_3(z_0(t_k) - f(t_k)),
+\label{eq:derivator}
+\end{aligned}
+\end{gather}
+donde $\varphi_i(z_0(t_k) - f(t_k)) \!=\! -\!\lambda_{n-i} L^{\frac{i+1}{n+1}}|z_0(t_k) - f(t_k)|^{\frac{n-i}{n + 1}}\text{sign}(z_0(t_k) - f(t_k))$, con $i = 0, 1, 2, 3$, y $\lambda_0 = 1.3$, $\lambda_1 = 1.85$, $\lambda_2 = 2.79$, $\lambda_3 = 6.48$. La señal de referencia $f(t_k)$ puede ser una señal escalón, rampa o senoidal, $L=1.8$ es la constante de Lipschitz y $\tau_s \!=\! 0.004$ s es el tiempo de muestreo.
+
+La respuesta de la planta a una señal escalón unitario se muestra en la \autoref{fig:plantResponse}. Tenga en cuenta los siguientes puntos al desarrollar la aplicación:
+\begin{enumerate}
+\item Implemente el modelo de la planta en C/C++ utilizando un método de discretización adecuado para garantizar la estabilidad y precisión en tiempo real. Se sugiere utilizar alguna tarjeta de desarrollo compatible con C/C++ para la adquisición y generación de señales en tiempo real (por ejemplo, Arduino, Raspberry Pi, etc.). Esta tarjeta debe recibir la señal de entrada y enviar la señal de salida de la planta con una tasa de muestreo de 250 Hz.
+\item Implemente el derivador de orden superior en otra tarjeta de desarrollo, sincronizada con la primera, asegurándose de que pueda manejar diferentes tipos de señales de referencia. Esta tarjeta debe recibir la señal de referencia y enviar las derivadas calculadas con la misma tasa de muestreo de 250 Hz.
+\item Busque la manera para almacenar las señales de entrada y salida en tiempo real. Adicionalmente, cree una interfaz que permita visualizar las señales en tiempo real. El usuario puede seleccionar diferentes señales de referencia (escalón, rampa, senoidal) y ajustar parámetros del derivador.
+\item Asegúrese de que la aplicación pueda ejecutarse en tiempo real.
+\end{enumerate}
+Realice pruebas de la aplicación con diferentes señales de referencia (escalón, rampa, senoidal) y documente los resultados obtenidos.
+
+\question[40] Desarrolle una aplicación simple de Redes Neuronales Artificiales (RNA) en C++, para resolver un problema de clasificación de números naturales del 0 al 9. La aplicación recibe como entrada un conjunto de números previamente almacenados en el archivo \texttt{digitos.txt}. La aplicación debe reconocer cada número y clasificarlo correctamente en una de las siguientes categorías:
+\begin{itemize}
+\item Clase 0: Números pares (0, 2, 4, 6, 8).
+\item Clase 1: Números impares (1, 3, 5, 7, 9).
+\item Clase 2: Números primos (2, 3, 5, 7).
+\item Clase 3: Números compuestos (4, 6, 8, 9).
+\end{itemize}
+
+Se recomienda utilizar una arquitectura de RNA con una capa de entrada, una o más capas ocultas y una capa de salida.
+
+\end{questions}
+
+\section*{Entrega}
+El trabajo práctico debe ser entregado en formato digital a través de un repositorio en la plataforma Github. Asegúrese de incluir un archivo README con instrucciones claras sobre cómo compilar y ejecutar su código. También, el archivo README debe explicar claramente la metodología que utiliza cada programa para resolver el problema dado. La fecha límite para la entrega es el 16 de Diciembre del 2025 a las 23:59 horas. No se aceptarán entregas tardías sin una justificación válida.
+%-----------------------------------------------------------------------------------------------
+\end{document}
