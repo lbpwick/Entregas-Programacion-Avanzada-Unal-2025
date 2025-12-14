@@ -68,6 +68,15 @@ El programa utiliza el algoritmo A*, que combina:
 
 $$f(n) = g(n) + h(n)$$
 
+Se expande siempre el estado con el menor valor de `f`, garantizando una solución óptima.
+
+---
+## 🧩 Estructura del código
+### 📦 Inclusión de librerías
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+```
 
 ---
 ## 📌 Ejemplo de entrada
