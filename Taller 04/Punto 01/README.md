@@ -77,6 +77,159 @@ Se expande siempre el estado con el menor valor de `f`, garantizando una soluci�
 #include <bits/stdc++.h>
 using namespace std;
 ```
+Incluye todas las librerías estándar necesarias para:
+
+- Vectores
+
+- Colas de prioridad
+
+- Conjuntos
+
+- Algoritmos
+
+- Entrada y salida
+
+### 🏗️ Estructura State
+```cpp
+struct State {
+    vector<int> board;
+    int g;
+    int h;
+    string path;
+
+    int f() const { return g + h; }
+};
+
+```
+Representa un estado del puzzle:
+
+| Atributo | Descripción               |
+| -------- | ------------------------- |
+| `board`  | Estado actual del tablero |
+| `g`      | Movimientos realizados    |
+| `h`      | Heurística (Manhattan)    |
+| `path`   | Secuencia de movimientos  |
+| `f()`    | Costo total estimado      |
+
+
+### 🔀 Comparador para la cola de prioridad
+
+```cpp
+struct Compare {
+    bool operator()(const State& a, const State& b) const {
+        return a.f() > b.f();
+    }
+};
+
+```
+Permite que la cola de prioridad siempre seleccione el estado con menor valor de `f`, como exige A*.
+
+### 📏 Heurística: Distancia Manhattan
+```cpp
+int manhattan(const vector<int>& board)
+```
+
+Calcula cuántos movimientos faltan aproximadamente para llegar al objetivo:
+
+- Para cada ficha:
+
+  - Se calcula la distancia horizontal y vertical desde su posición actual hasta su posición final
+
+- El espacio vacío (0) no se considera
+
+✔️ Esta heurística es admisible, por lo que A* garantiza la mejor solución.
+
+### 🔍 Verificación de solucionabilidad
+```cpp
+bool isSolvable(const vector<int>& board)
+```
+Antes de ejecutar A*, el programa verifica si el puzzle tiene solución, usando el concepto de **inversiones**:
+
+- Cuenta pares de fichas fuera de orden
+
+- Si el número de inversiones es par, el puzzle es resoluble
+
+- Si es impar, no existe solución
+
+Esto evita búsquedas innecesarias.
+
+### 🚀 Función `main()` 
+#### 1️⃣ Entrada del usuario
+```cpp
+vector<int> start(9);
+```
+Se lee el tablero inicial desde consola.
+
+#### 2️⃣ Estado objetivo
+```cpp
+vector<int> goal = {1,2,3,4,5,6,7,8,0};
+```
+Representa el tablero ordenado.
+
+#### 3️⃣ Inicialización de estructuras
+```cpp
+priority_queue<State, vector<State>, Compare> pq;
+unordered_set<string> visited;
+```
+- `pq`: estados pendientes por explorar
+
+- `visited`: evita repetir estados ya evaluados
+
+#### 4️⃣ Estado inicial
+```cpp
+State init{start, 0, manhattan(start), ""};
+```
+- `g` = 0 → ningún movimiento
+
+- `h` → heurística inicial
+
+- `path` vacío
+
+#### 5️⃣ Movimientos posibles
+```cpp
+dx, dy, moveChar
+```
+Define:
+
+- Cambios de posición
+
+- Letra asociada a cada movimiento
+
+#### 6️⃣ Bucle principal A*
+```cpp
+while (!pq.empty())
+```
+Para cada estado:
+
+**1.** Se extrae el mejor candidato
+
+**2.** Se ignora si ya fue visitado
+
+**3.** Se verifica si es el objetivo
+
+**4.** Se generan nuevos estados moviendo el espacio vacío
+
+**5.** Se agregan a la cola de prioridad
+
+#### 7️⃣ Solución encontrada
+
+Cuando el estado actual coincide con el objetivo:
+
+- Se imprime:
+
+    - Número de movimientos
+
+    - Secuencia de pasos
+
+    - Leyenda de controles
+
+#### 8️⃣ Caso sin solución
+
+Si la cola se vacía sin alcanzar el objetivo:
+
+```cpp
+No se encontro solucion.
+```
 
 ---
 ## 📌 Ejemplo de entrada
