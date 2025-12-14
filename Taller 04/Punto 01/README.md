@@ -49,6 +49,7 @@ La solución se expresa como una cadena de caracteres, donde cada letra indica e
 | S     | Abajo      |
 | A     | Izquierda  |
 | D     | Derecha    |
+
 Estas secuencias se observarán en el terminal de la siguiente manera:
 
 ```bash
@@ -64,9 +65,9 @@ El programa utiliza el algoritmo A*, que combina:
 - **Heurística** `(h)`**:** estimación de cuántos movimientos faltan
 
 **Función de evaluación:**
-\[
-f(n) = g(n) + h(n)
-\]
+
+$f(n) = g(n) + h(n)$
+
 
 ---
 ## 📌 Ejemplo de entrada
