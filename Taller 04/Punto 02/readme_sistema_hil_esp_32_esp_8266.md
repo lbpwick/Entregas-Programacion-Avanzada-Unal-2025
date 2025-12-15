@@ -177,23 +177,8 @@ Tiempo   Ref   Planta   z0   z1   z2
 
 ---
 
-## Aplicaciones
-
-- Validación de algoritmos de control y observadores
-- Pruebas HIL sin planta física
-- Análisis de derivadores no lineales
-- Docencia en control digital y sistemas embebidos
-
----
-
 ## Notas importantes
-
-- Los coeficientes de la planta deben validarse externamente (MATLAB/Python).
 - El sistema depende de una comunicación serial estable a 115200 baudios.
 - El tiempo real está limitado por la latencia de UART y Python.
 
----
-
-## Autor
-Proyecto desarrollado como plataforma experimental HIL para control y estimación en tiempo real.
 
