@@ -93,9 +93,8 @@ Tiempo, Referencia, Planta, z0, z1, z2
 ### Función principal
 El ESP8266 simula una **planta dinámica de tercer orden** descrita por la función de transferencia:
 
-\[
-G(s) = \frac{7s^2 - 28s + 21}{s^3 + 9.8s^2 + 30.65s + 30.1}
-\]
+
+$$G(s) = \frac{7s^2 - 28s + 21}{s^3 + 9.8s^2 + 30.65s + 30.1}$$
 
 Esta planta se discretiza previamente (método Tustin / trapezoidal) para un periodo de muestreo de **0.004 s**.
 
@@ -107,10 +106,9 @@ Esta planta se discretiza previamente (método Tustin / trapezoidal) para un per
 
 La ecuación general es:
 
-\[
-y[k] = \frac{b_0u[k] + b_1u[k-1] + b_2u[k-2] + b_3u[k-3]
-- a_1y[k-1] - a_2y[k-2] - a_3y[k-3]}{a_0}
-\]
+
+$$y[k] = \frac{b_0u[k] + b_1u[k-1] + b_2u[k-2] + b_3u[k-3]
+- a_1y[k-1] - a_2y[k-2] - a_3y[k-3]}{a_0}$$
 
 ### Flujo de operación
 1. Recibe la entrada `u(k)` desde el ESP32.
