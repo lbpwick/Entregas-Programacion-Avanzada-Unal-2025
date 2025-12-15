@@ -107,8 +107,7 @@ Esta planta se discretiza previamente (método Tustin / trapezoidal) para un per
 La ecuación general es:
 
 
-$$y[k] = \frac{b_0u[k] + b_1u[k-1] + b_2u[k-2] + b_3u[k-3]
-- a_1y[k-1] - a_2y[k-2] - a_3y[k-3]}{a_0}$$
+$$y[k] = \frac{b_0u[k] + b_1u[k-1] + b_2u[k-2] + b_3u[k-3] - a_1y[k-1] - a_2y[k-2] - a_3y[k-3]}{a_0}$$
 
 ### Flujo de operación
 1. Recibe la entrada `u(k)` desde el ESP32.
