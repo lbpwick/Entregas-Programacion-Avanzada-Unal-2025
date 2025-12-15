@@ -1,4 +1,4 @@
-# 🧠 Clasificación de Dígitos 0–9 con Redes Neuronales en C++
+# Clasificación de Dígitos 0–9 con Redes Neuronales en C++
 
 Este proyecto implementa una **Red Neuronal Artificial (RNA) feed‑forward simple en C++**
 para clasificar números naturales del 0 al 9 en las siguientes clases:
@@ -38,7 +38,7 @@ No se usan librerías externas: solo **STL** (`<vector>`, `<string>`, `<random>`
 
 ## 🚀 Compilación y Ejecución
 
-Suponiendo que el archivo fuente se llama **`punto_03.cpp`**:
+El archivo fuente se llama **`punto_03.cpp`**:
 
 ### Linux / macOS
 ```
@@ -137,3 +137,4 @@ Numero: 9 -> clase 3 (compuesto)
 
 
 ---
+
